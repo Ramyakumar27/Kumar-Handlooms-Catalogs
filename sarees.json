@@ -1,0 +1,106 @@
+
+[
+  {
+    "id": 1,
+    "name": "Royal Silk Banarasi",
+    "description": "Luxurious silk saree with intricate gold zari work and traditional motifs. This exquisite piece represents the finest craftsmanship of Banarasi weavers, featuring rich silk fabric adorned with elaborate gold threadwork. Perfect for weddings, festivals, and special occasions.",
+    "price": 12500,
+    "productCode": "KHS001",
+    "category": "Banarasi",
+    "colorVariants": [
+      { "name": "Deep Red", "imageUrls": ["https://picsum.photos/seed/saree1a/600/800", "https://picsum.photos/seed/saree1b/600/800", "https://picsum.photos/seed/saree1c/600/800"] },
+      { "name": "Royal Blue", "imageUrls": ["https://picsum.photos/seed/saree1blue1/600/800", "https://picsum.photos/seed/saree1blue2/600/800"] },
+      { "name": "Emerald Green", "imageUrls": ["https://picsum.photos/seed/saree1green1/600/800", "https://picsum.photos/seed/saree1green2/600/800", "https://picsum.photos/seed/saree1green3/600/800"] },
+      { "name": "Golden Yellow", "imageUrls": ["https://picsum.photos/seed/saree1yellow1/600/800"] }
+    ],
+    "specifications": {
+      "Fabric": "Pure Silk",
+      "Work": "Gold Zari"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Banarasi Brocade",
+    "description": "Elegant Banarasi weave with gold and silver zari work. The intricate floral and foliate motifs make it a masterpiece of Indian craftsmanship.",
+    "price": 9800,
+    "productCode": "KHS002",
+    "category": "Banarasi",
+    "colorVariants": [
+      { "name": "Pastel Pink", "imageUrls": ["https://picsum.photos/seed/saree2a/600/800", "https://picsum.photos/seed/saree2b/600/800", "https://picsum.photos/seed/saree2c/600/800"] },
+      { "name": "Sky Blue", "imageUrls": ["https://picsum.photos/seed/saree2blue1/600/800", "https://picsum.photos/seed/saree2blue2/600/800"] },
+      { "name": "Mint Green", "imageUrls": ["https://picsum.photos/seed/saree2green1/600/800", "https://picsum.photos/seed/saree2green2/600/800", "https://picsum.photos/seed/saree2green3/600/800"] }
+    ],
+    "specifications": {
+      "Fabric": "Georgette",
+      "Work": "Silver Zari"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Chanderi Cotton",
+    "description": "Lightweight and sheer, with delicate buti patterns. Known for its glossy transparency and sheer texture, it is a comfortable choice for summer.",
+    "price": 4500,
+    "productCode": "KHS003",
+    "category": "Cotton",
+    "colorVariants": [
+        { "name": "Beige", "imageUrls": ["https://picsum.photos/seed/saree3a/600/800", "https://picsum.photos/seed/saree3b/600/800", "https://picsum.photos/seed/saree3c/600/800"] },
+        { "name": "White", "imageUrls": ["https://picsum.photos/seed/saree3white1/600/800", "https://picsum.photos/seed/saree3white2/600/800"] },
+        { "name": "Light Yellow", "imageUrls": ["https://picsum.photos/seed/saree3yellow1/600/800"] }
+    ],
+    "specifications": {
+      "Fabric": "Chanderi Cotton",
+      "Work": "Buti Work"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Classic Kanjivaram",
+    "description": "Lustrous and smooth, known for its vibrant colors and minimalist design. It is a perfect blend of traditional grandeur and modern simplicity.",
+    "price": 17200,
+    "productCode": "KHS004",
+    "category": "Kanjivaram",
+    "colorVariants": [
+        { "name": "Magenta", "imageUrls": ["https://picsum.photos/seed/saree4a/600/800", "https://picsum.photos/seed/saree4b/600/800", "https://picsum.photos/seed/saree4c/600/800"] },
+        { "name": "Parrot Green", "imageUrls": ["https://picsum.photos/seed/saree4green1/600/800", "https://picsum.photos/seed/saree4green2/600/800"] },
+        { "name": "Turquoise", "imageUrls": ["https://picsum.photos/seed/saree4turq1/600/800", "https://picsum.photos/seed/saree4turq2/600/800"] }
+    ],
+    "specifications": {
+        "Fabric": "Kanjivaram Silk",
+        "Work": "Plain with Zari Border"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Paithani Peacock",
+    "description": "Features the iconic peacock motif on a rich pallu. This saree is a symbol of Maharashtrian culture and is characterized by its vibrant colors.",
+    "price": 15000,
+    "productCode": "KHS005",
+    "category": "Paithani",
+    "colorVariants": [
+        { "name": "Purple", "imageUrls": ["https://picsum.photos/seed/saree5a/600/800", "https://picsum.photos/seed/saree5b/600/800", "https://picsum.photos/seed/saree5c/600/800"] },
+        { "name": "Orange", "imageUrls": ["https://picsum.photos/seed/saree5orange1/600/800", "https://picsum.photos/seed/saree5orange2/600/800"] },
+        { "name": "Peacock Blue", "imageUrls": ["https://picsum.photos/seed/saree5blue1/600/800", "https://picsum.photos/seed/saree5blue2/600/800"] }
+    ],
+    "specifications": {
+        "Fabric": "Pure Silk",
+        "Work": "Peacock Zari Pallu"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Bandhani Georgette",
+    "description": "Traditional tie-dye patterns on a flowing georgette fabric. The vibrant and intricate patterns are a hallmark of Rajasthani and Gujarati art.",
+    "price": 6300,
+    "productCode": "KHS006",
+    "category": "Georgette",
+    "colorVariants": [
+        { "name": "Red & Yellow", "imageUrls": ["https://picsum.photos/seed/saree6a/600/800", "https://picsum.photos/seed/saree6b/600/800", "https://picsum.photos/seed/saree6c/600/800"] },
+        { "name": "Green & Blue", "imageUrls": ["https://picsum.photos/seed/saree6gb1/600/800", "https://picsum.photos/seed/saree6gb2/600/800"] },
+        { "name": "Pink & Orange", "imageUrls": ["https://picsum.photos/seed/saree6po1/600/800", "https://picsum.photos/seed/saree6po2/600/800", "https://picsum.photos/seed/saree6po3/600/800"] }
+    ],
+    "specifications": {
+        "Fabric": "Georgette",
+        "Work": "Tie-Dye (Bandhani)"
+    }
+  }
+]
