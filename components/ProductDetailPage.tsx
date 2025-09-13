@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Saree, ColorVariant } from '../types';
 import { CONTACT_INFO } from '../constants';
 import { WhatsAppIcon } from './Icons';
@@ -12,10 +12,41 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ saree, onBack }) 
   const [selectedColor, setSelectedColor] = useState<ColorVariant>(saree.colorVariants[0]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Refs for swipe gesture
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+  const minSwipeDistance = 50;
+
   useEffect(() => {
     // When the selected color changes, reset the image index to the first image of the new color
     setCurrentImageIndex(0);
   }, [selectedColor]);
+  
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchEndX.current = 0; // reset end position
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === 0 || touchEndX.current === 0) return;
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && currentImageIndex < selectedColor.imageUrls.length - 1) {
+        setCurrentImageIndex(prev => prev + 1);
+    } else if (isRightSwipe && currentImageIndex > 0) {
+        setCurrentImageIndex(prev => prev - 1);
+    }
+    
+    // Reset refs
+    touchStartX.current = 0;
+    touchEndX.current = 0;
+  };
 
   const handleWhatsAppOrder = () => {
     const imageUrl = selectedColor.imageUrls[currentImageIndex];
@@ -42,19 +73,33 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ saree, onBack }) 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
           {/* Image Gallery */}
           <div>
-            <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden shadow-sm">
-              <img 
-                src={selectedColor.imageUrls[currentImageIndex]} 
-                alt={`${saree.name} - ${selectedColor.name} - view ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover object-center" 
-              />
+            <div 
+              className="aspect-square bg-gray-100 rounded-lg overflow-hidden shadow-sm"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <div
+                className="flex h-full transition-transform duration-300 ease-in-out"
+                style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
+              >
+                {selectedColor.imageUrls.map((url, index) => (
+                  <img 
+                    key={index}
+                    src={url} 
+                    alt={`${saree.name} - ${selectedColor.name} - view ${index + 1}`}
+                    className="w-full h-full object-cover object-center flex-shrink-0"
+                    draggable="false" // prevent default browser drag behavior
+                  />
+                ))}
+              </div>
             </div>
             <div className="flex justify-center mt-3 space-x-1.5">
               {selectedColor.imageUrls.map((_, index) => (
                 <button 
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${currentImageIndex === index ? 'bg-red-600' : 'bg-gray-300 hover:bg-gray-400'}`}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${currentImageIndex === index ? 'bg-red-600 w-4' : 'bg-gray-300 hover:bg-gray-400'}`}
                   aria-label={`Go to image ${index + 1}`}
                 ></button>
               ))}
